@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="styles-b.css" />
   <link rel="stylesheet" href="styles-c.css" />
   <link rel="stylesheet" href="styles-d.css?v=mobile-art-2" />
+  <link rel="stylesheet" href="allfix.css?v=allfix-1" />
 </head>
 <body>
   <div class="site-frame">
@@ -18,38 +19,22 @@
         <span class="brand-name">BeforeWise</span>
         <span class="brand-tagline">What to do. What not to do.</span>
       </button>
-
       <nav class="sidebar-nav" aria-label="Primary">
         <button data-nav="discover" class="sidebar-link active">Find a situation</button>
         <button data-nav="saved" class="sidebar-link">Saved checklists</button>
         <button data-nav="home" class="sidebar-link">Recent & popular</button>
       </nav>
-
       <div class="sidebar-rule"></div>
       <button id="sidebarCustom" class="sidebar-link sidebar-create">Create your own</button>
-
-      <div class="field-note">
-        <strong>Be prepared.</strong>
-        <p>Practical checklists to help you handle real-life situations with confidence.</p>
-      </div>
-
-      <div class="sidebar-footer">
-        <button id="resetProgressBtn" class="plain-button">Reset progress</button>
-        <span>Local-first prototype</span>
-      </div>
+      <div class="field-note"><strong>Be prepared.</strong><p>Practical checklists to help you handle real-life situations with confidence.</p></div>
+      <div class="sidebar-footer"><button id="resetProgressBtn" class="plain-button">Reset progress</button><span>Local-first prototype</span></div>
     </aside>
-
     <div class="workspace">
       <header class="topbar">
         <button class="mobile-brand" data-nav="home">BeforeWise</button>
-        <div class="global-search">
-          <label for="globalSearch" class="sr-only">Search situations</label>
-          <input id="globalSearch" placeholder="What are you about to do?" autocomplete="off" />
-          <button id="globalSearchBtn">Search</button>
-        </div>
+        <div class="global-search"><label for="globalSearch" class="sr-only">Search situations</label><input id="globalSearch" placeholder="What are you about to do?" autocomplete="off" /><button id="globalSearchBtn">Search</button></div>
         <button class="top-action" data-nav="saved">Saved</button>
       </header>
-
       <main id="app" class="main-content" aria-live="polite"></main>
     </div>
   </div>
@@ -63,5 +48,6 @@
   <script src="app-b.js"></script>
   <script src="app-c.js"></script>
   <script src="app-d.js"></script>
+  <script src="allfix.js?v=allfix-1"></script>
 </body>
 </html>
