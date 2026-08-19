@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f8f6f1" />
+  <title>BeforeWise — What to do. What not to do.</title>
+  <meta name="description" content="Practical checklists for real-life situations: what to do, what not to do, what to remember, and what to watch out for." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand-button" data-nav="home" aria-label="BeforeWise home">
+        <span class="brand-mark">B</span>
+        <span class="brand-lockup"><strong>BeforeWise</strong><small>What to do. What not to do.</small></span>
+      </button>
+      <div class="desktop-nav" role="navigation" aria-label="Primary">
+        <button class="nav-link active" data-nav="home">Home</button>
+        <button class="nav-link" data-nav="discover">Discover</button>
+        <button class="nav-link" data-nav="saved">Saved</button>
+      </div>
+      <button id="resetProgressBtn" class="ghost-action" title="Reset checked items">Reset progress</button>
+    </header>
+
+    <main id="app" class="main-content" aria-live="polite"></main>
+
+    <nav class="mobile-nav" aria-label="Primary mobile navigation">
+      <button data-nav="home" class="mobile-nav-item active"><span>⌂</span><small>Home</small></button>
+      <button data-nav="discover" class="mobile-nav-item"><span>◎</span><small>Discover</small></button>
+      <button data-nav="saved" class="mobile-nav-item"><span>♡</span><small>Saved</small></button>
+    </nav>
+  </div>
+  <script src="data-prelude.js"></script>
+<script src="data-1.js"></script>
+<script src="data-2.js"></script>
+<script src="data-3.js"></script>
+<script src="data-4.js"></script>
+<script src="data-final.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
