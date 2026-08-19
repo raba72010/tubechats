@@ -39,8 +39,8 @@ function scenarioView(s){
  const saved=store.saved.includes(s.id), prog=progressFor(s), counts=typeCounts(s);
  const visibleIndices=s.items.map((_,i)=>i).filter(i=>state.filter==='all'||s.items[i].type===state.filter);
  const stages=[...new Set(s.items.map(i=>i.stage))];
- const art='';
- const fieldGuideLabel=`${s.items.length} things worth knowing before you ${s.title.toLowerCase().startsWith('going')?'go':'begin'}.`;
+ const art=s.id==='used-car'?`<img class="scenario-art" src="car-editorial.jpg" alt="Editorial illustration of a used car" />`:'';
+ const fieldGuideLabel=s.id==='used-car'?`${s.items.length} things worth knowing before you pay.`:`${s.items.length} things worth knowing before you ${s.title.toLowerCase().startsWith('going')?'go':'begin'}.`;
  return `<div class="scenario-layout">
    <div class="scenario-main">
      <div class="scenario-topline"><button id="backBtn" class="back-link">Back to situations</button><button id="saveScenario" class="save-link ${saved?'saved':''}">${saved?'Saved':'Save'}</button></div>
@@ -53,11 +53,11 @@ function scenarioView(s){
      ${s.sources?.length?`<section class="mobile-sources"><h3>Sources used for this guide</h3>${s.sources.map(src=>`<a href="${src.url}" target="_blank" rel="noreferrer">${esc(src.org)} — ${esc(src.title)}</a>`).join('')}</section>`:''}
    </div>
    <aside class="scenario-aside">
-     <section class="side-card progress-card"><span>Your progress</span><div class="progress-ring" style="--progress:${prog.pct}"><strong>${prog.done}<small>/${prog.total}</small></strong></div><p>${prog.pct===100?'You’re BeforeWise.':'Good progress.'}</p></section>
+     <section class="side-card progress-card"><span>Your progress</span><div class="progress-ring" style="--progress:${prog.pct}"><strong>${prog.done}<small>/${prog.total}</small></strong></div><p>${prog.pct===100?'You’re BeforeWise.':prog.done===0?'Ready to start.':'Good progress.'}</p></section>
      ${stageRail(s)}
      ${sourceCard(s)}
      <button id="saveScenarioAside" class="save-card ${saved?'saved':''}"><strong>${saved?'Saved checklist':'Save this checklist'}</strong><span>${saved?'Available in your saved field guides.':'Add this guide to your saved items.'}</span></button>
    </aside>
  </div>
- <div class="mobile-progress-footer"><div class="footer-progress"><strong>${prog.done}/${prog.total}</strong></div><div><strong>${prog.pct===100?'You’re BeforeWise.':'Good progress!'}</strong><small>${prog.pct===100?'Everything on this guide is checked.':'Keep going — the important things are visible.'}</small></div><button id="mobileSave">${saved?'Saved':'Save'}</button></div>`;
+ <div class="mobile-progress-footer"><div class="footer-progress"><strong>${prog.done}/${prog.total}</strong></div><div><strong>${prog.pct===100?'You’re BeforeWise.':prog.done===0?'Ready when you are.':'Good progress!'}</strong><small>${prog.pct===100?'Everything on this guide is checked.':'Keep going — the important things are visible.'}</small></div><button id="mobileSave">${saved?'Saved':'Save'}</button></div>`;
 }
